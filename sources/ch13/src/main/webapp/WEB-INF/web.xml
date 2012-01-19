@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+ 
+	<!--  Image -->
+	<servlet>
+		<servlet-name>RetrieveImageServlet</servlet-name>
+		<servlet-class>com.appspot.images.RetrieveDatastoreImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RetrieveImageServlet</servlet-name>
+		<url-pattern>/retrieve-image</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ReceiveImageServlet</servlet-name>
+		<servlet-class>com.appspot.images.ReceiveImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReceiveImageServlet</servlet-name>
+		<url-pattern>/receive-image</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ResizeImageServlet</servlet-name>
+		<servlet-class>com.appspot.images.ResizeImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResizeImageServlet</servlet-name>
+		<url-pattern>/resize-image</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.appspot.images.CompositeImageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/composite-image</url-pattern>
+	</servlet-mapping>
+	
+  <servlet>
+    <servlet-name>appstats</servlet-name>
+    <servlet-class>com.google.appengine.tools.appstats.AppstatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appstats</servlet-name>
+    <url-pattern>/appstats/*</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+  <!-- XMPP -->
+  <servlet>
+    <servlet-name>SendXMPPServlet</servlet-name>
+    <servlet-class>com.appspot.xmpp.SendXMPPServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendXMPPServlet</servlet-name>
+    <url-pattern>/send-xmpp</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>XMPPMessageServlet</servlet-name>
+    <servlet-class>com.appspot.xmpp.XMPPMessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XMPPMessageServlet</servlet-name>
+    <url-pattern>/_ah/xmpp/message/chat/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>XMPPPresenceServlet</servlet-name>
+    <servlet-class>com.appspot.xmpp.XMPPPresenceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XMPPPresenceServlet</servlet-name>
+    <url-pattern>/_ah/xmpp/presence/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>XMPPSubscriptionServlet</servlet-name>
+    <servlet-class>com.appspot.xmpp.XMPPSubscriptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>XMPPSubscriptionServlet</servlet-name>
+    <url-pattern>/_ah/xmpp/subscription/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>appstats</servlet-name>
+    <servlet-class>com.google.appengine.tools.appstats.AppstatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appstats</servlet-name>
+    <url-pattern>/appstats/*</url-pattern>
+  </servlet-mapping>
+</web-app>

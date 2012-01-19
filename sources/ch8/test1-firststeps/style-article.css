@@ -1,0 +1,48 @@
+body {
+	font-family: Verdana, sans-serif;
+}
+article {
+	font-size: 12px;
+}
+h1 {
+	font-size: 50px;
+}
+h2 {
+	font-size: 30px;
+	font-style: italic;
+}
+article {
+	border-style: dotted;
+	border-width: 1px;
+	border-radius: 15px;
+	margin: 40px 0px 20px 0px;
+	padding: 5px;
+}
+article:hover {
+	border-style: solid;
+}
+article h1 {
+	font-size: 25px;
+}
+nav a {
+	display: block;
+}	
+body > footer {
+	margin: 40px 0px 0px 0px;
+	background-color: black;
+	color: white;
+}
+p::first-letter {
+	font-size: 20px;
+}
+time[datetime^="2009"] {
+	color: blue;
+}
+article.minimized p {
+	display: none;
+}
+article.minimized h1:after {
+ content: "<<CLICK TO OPEN>>";
+ margin: 0px 0px 0px 10px;
+ color: grey;
+}

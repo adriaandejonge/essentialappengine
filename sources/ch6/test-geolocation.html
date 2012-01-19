@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"> 
+  <body>
+    <header>
+      <h1>Try the Geolocation services</h1>
+    </header>
+    <article>
+      <input type=button id=do-get value="Get coordinates"><br>
+    </article>
+  </body>
+  <script>
+    function doGet() {
+      if (navigator.geolocation) { 
+        navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var coords = position.coords; 
+          alert('coords = ' + coords.latitude + 
+            ', ' + coords.longitude + 
+            ' - accuracy = ' + coords.accuracy);
+        }, 
+        function (error) { 
+          alert('error nr ' + error.code); 
+        } 
+        ); 
+      }
+    }
+    document.getElementById('do-get')
+      .addEventListener('click', doGet, true);
+  </script>
+</html>

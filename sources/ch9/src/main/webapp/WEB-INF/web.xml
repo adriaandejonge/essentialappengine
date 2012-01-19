@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+  <!-- Channel -->
+  <servlet>
+    <servlet-name>OpenChannelServlet</servlet-name>
+    <servlet-class>com.appspot.channel.OpenChannelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OpenChannelServlet</servlet-name>
+    <url-pattern>/open-channel</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SendMessageServlet</servlet-name>
+    <servlet-class>com.appspot.channel.SendMessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendMessageServlet</servlet-name>
+    <url-pattern>/send-message</url-pattern>
+  </servlet-mapping>
+</web-app>

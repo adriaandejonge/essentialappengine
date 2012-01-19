@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Test</title>
+$analytics()$
+</head>
+<body>
+<h1>$title$</h1>
+<h2>$author$</h2>
+<p>
+ $content$
+</p>
+</body>
+</html>

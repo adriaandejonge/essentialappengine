@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"> 
+  <body>
+    <header>
+      <h1>Try the Canvas</h1>
+    </header>
+    <article>
+      <canvas id="my-canvas" height="200" width="250">
+    </article>
+  </body>
+  <script>
+    function drawInCanvas() {
+      var canvas = document.getElementById('my-canvas');
+      var context = canvas.getContext('2d');
+      context.beginPath();
+      context.moveTo(10,10);
+      context.lineTo(190,190);
+      context.stroke();
+      context.fillRect(50,10,40,40);
+      context.fillStyle = "gray";
+      context.rotate(0.1);
+      context.fillRect(100,10,40,40);
+      context.globalAlpha = 0.5;
+      context.fillRect(150,10,40,40);
+      context.fillRect(170,10,40,40);
+    }
+    window.addEventListener('load', drawInCanvas, true);
+  </script>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+    <!-- URL Fetch -->
+  <servlet>
+		<servlet-name>OpenChannelServlet</servlet-name>
+		<servlet-class>com.appspot.channel.OpenChannelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OpenChannelServlet</servlet-name>
+		<url-pattern>/open-channel</url-pattern>
+	</servlet-mapping>
+    <servlet>
+		<servlet-name>SendMessageServlet</servlet-name>
+		<servlet-class>com.appspot.channel.SendMessageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendMessageServlet</servlet-name>
+		<url-pattern>/send-message</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>ASyncUrlFetchServlet</servlet-name>
+		<servlet-class>com.appspot.urlfetch.ASyncUrlFetchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ASyncUrlFetchServlet</servlet-name>
+		<url-pattern>/async-url-fetch</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>SyncUrlFetchServlet</servlet-name>
+		<servlet-class>com.appspot.urlfetch.SyncUrlFetchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SyncUrlFetchServlet</servlet-name>
+		<url-pattern>/sync-url-fetch</url-pattern>
+	</servlet-mapping>
+  <servlet>
+		<servlet-name>SyncUrlPostServlet</servlet-name>
+		<servlet-class>com.appspot.urlfetch.SyncUrlPostServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SyncUrlPostServlet</servlet-name>
+		<url-pattern>/sync-url-post</url-pattern>
+	</servlet-mapping>
+  <servlet>
+    <servlet-name>appstats</servlet-name>
+    <servlet-class>com.google.appengine.tools.appstats.AppstatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appstats</servlet-name>
+    <url-pattern>/appstats/*</url-pattern>
+  </servlet-mapping>
+</web-app>

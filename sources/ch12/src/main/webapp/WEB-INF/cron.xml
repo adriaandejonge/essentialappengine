@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <!-- <cron>
+    <url>/tasks/cron/mail</url>
+    <description>Send a spam mail...</description>
+    <schedule>every 2 minutes</schedule>
+  </cron>
+  <cron>
+    <url>/tasks/cron/read-rss</url>
+    <description>Read RSS feed...</description>
+    <schedule>every day 22:00</schedule>
+    <timezone>Africa/Johannesburg</timezone>
+  </cron> -->
+</cronentries>

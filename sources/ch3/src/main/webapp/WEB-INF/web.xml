@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blacklistentries>
+  <blacklist>
+    <subnet>170.224.225.27</subnet>
+    <description>One specific address</description>
+  </blacklist>
+  <blacklist>
+    <subnet>170.224.225.0/24</subnet>
+    <description>A full subnet</description>
+  </blacklist>
+</blacklistentries>

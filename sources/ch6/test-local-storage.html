@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"> 
+  <body>
+    <header>
+      <h1>Try the localStorage</h1>
+    </header>
+    <article>
+      <input type=button id=do-set value=Set><br>
+      <input type=button id=do-get value=Get><br>
+      <input type=button id=get-length value=Length>
+    </article>
+  </body>
+  <script>
+    function doSet() {
+      localStorage.test = 'did set'
+      alert('set');
+    }
+    function doGet() {
+      alert('get = ' + localStorage.test);
+    }
+    function getLength() {
+      alert('length = ' + localStorage.length);
+    }
+    document.getElementById('do-get')
+      .addEventListener('click', doGet, true);
+    document.getElementById('do-set')
+      .addEventListener('click', doSet, true);
+    document.getElementById('get-length')
+      .addEventListener('click', getLength, true);
+  </script>
+</html>

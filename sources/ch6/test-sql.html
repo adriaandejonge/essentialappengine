@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"> 
+  <body>
+    <header>
+      <h1>Try the local SQL database</h1>
+    </header>
+    <article>
+      <input type=button id=do-create value="Create table"><br>
+      <input type=button id=do-fill value="Fill table"><br>
+      <input type=button id=do-query value="Query database">
+    </article>
+  </body>
+  <script>
+    var db;
+    if (window.openDatabase) {
+        db = openDatabase('mydb', '1.0', 
+          'My local database', 1024 * 1024);
+    }
+    
+    function doCreate() {      
+      db.transaction(function (tx) {
+        tx.executeSql('CREATE TABLE ' +
+          'IF NOT EXISTS mytable (id, content)'); 
+      });
+            
+      alert('created table');
+    }
+    function doFill() {
+      db.transaction(function (tx) {
+        tx.executeSql('INSERT INTO mytable (id, content)' +
+          'VALUES(?, ?)', [1, 'Test content']); 
+      });
+      alert('filled data');
+    }
+    function doQuery() {
+      db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM mytable WHERE id = ?',
+          [1], function (tx, results) {
+            for (var i = 0; i < results.rows.length; i++) {
+              alert('query result = ' +
+              results.rows.item(i).content);
+            }
+          }); 
+      });
+
+    }
+    document.getElementById('do-create')
+      .addEventListener('click', doCreate, true);
+    document.getElementById('do-fill')
+      .addEventListener('click', doFill, true);
+    document.getElementById('do-query')
+      .addEventListener('click', doQuery, true);
+  </script>
+</html>

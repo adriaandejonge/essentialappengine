@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                        http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+  <!-- Template -->
+	<servlet>
+		<servlet-name>StringTemplateServlet</servlet-name>
+		<servlet-class>com.appspot.template.StringTemplateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StringTemplateServlet</servlet-name>
+		<url-pattern>/st</url-pattern>
+	</servlet-mapping>
+
+  <servlet>
+    <servlet-name>appstats</servlet-name>
+    <servlet-class>com.google.appengine.tools.appstats.AppstatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appstats</servlet-name>
+    <url-pattern>/appstats/*</url-pattern>
+  </servlet-mapping>
+</web-app>

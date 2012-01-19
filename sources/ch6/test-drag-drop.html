@@ -1,0 +1,45 @@
+ <! DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8"> 
+     <style>
+       #drop { height: 100px; border: 4px dashed #c00; } 
+       #drag {margin: 50px; border: 1px solid #00c; }
+     </style> 
+   </head>
+   <body>
+     <header>
+       <h1>Try Dragging and Dropping</h1>
+     </header>
+     <article>
+       <div id="drag" draggable="true">This element
+         is draggable</div>
+       
+       <div id="drop"></div> 
+ 
+     </article>
+   </body>
+   <script>
+     var drop = document.getElementById('drop');
+     drop.ondrop = function (event) { 
+       event = event || window.event;
+       this.innerHTML += '<p>' + 
+         event.dataTransfer.getData('Text') + '</p>'; 
+       event.cancelBubble = true;
+       return false;
+     };
+ 
+     var appEngineLogo = document.createElement('img');
+     appEngineLogo.src = 'http://code.google.com/' +
+       'appengine/images/appengine_lowres.png';
+     var dragElement = document.getElementById('drag')
+ 
+     dragElement.ondragstart = function(event) {
+       event = event || window.event;
+       event.dataTransfer.setDragImage(appEngineLogo, 50, 50);
+       event.dataTransfer.setData('Text', dragElement.innerHTML);
+     }
+     
+     drop.ondragover = function () { return false; }; 
+   </script>
+ </html>
